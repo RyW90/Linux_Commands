@@ -8,7 +8,7 @@ Welcome to Linux_Commands's documentation!
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    
    第3章 命令基本格式及文件处理命令
    第4章 文件搜索命令
