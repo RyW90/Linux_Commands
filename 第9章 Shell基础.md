@@ -1,21 +1,25 @@
 # 第9章 Shell基础
 ---
 
-### 9-1 shell概述
+### 9-1 Shell概述
 
-shell是一个命令行解释器，向用户提供一个向linux内核发送请求的以便以便运行程序的界面系统及程序，用户可以向shell来启动，挂起停止甚至编写程序
+Shell是一个命令行解释器，向用户提供一个向linux内核发送请求的以便以便运行程序的界面系统及程序，用户可以向shell来启动，挂起停止甚至编写程序
 
-shell还是一个功能强大的编程语言，容易编写和调试，灵活性较强
+Shell还是一个功能强大的编程语言，容易编写和调试，灵活性较强
 
-shell是解释执行的脚本语言，在shell中可以直接调用Linux系统命令，
+Shell是解释执行的脚本语言，在shell中可以直接调用Linux系统命令
+
+Shell两种主要语法，Bourne：sh,ksh,Bash(绝大多数使用),psh, zsh. C(语法与C语言类似）: csh, tcsh
 
 ```echo $SHELL``` #查看当前的shell
+
+```vi /etc/shells```#查看支持哪些shell
 
 系统登录时的shell为shell还可以登录其他的shell为子shell
 
 ### 9-2 脚本执行方式
 
-```echo [选项] "[输出内容]"```
+```echo [选项] "[输出内容]"```#输出文本
 
 -e 支持反斜杠\控制的字符转换
 
@@ -25,10 +29,10 @@ shell是解释执行的脚本语言，在shell中可以直接调用Linux系统�
 - \r回车
 - \t&nbsp;Tab
 - \v垂直制表符
-- \onn八进制ASCII输出
+- \0nnn八进制ASCII输出
 - \xhh 十六进制ASCII输出
 
-输出内容```\e[1;31m xxxxx \e[0m```,带颜色输出
+```echo -e \e[1;31m xxxxx \e[0m```#带颜色输出，"\e[1;31m"开启颜色输出，31m为可选颜色，"\e[0m"关闭颜色输出
 
 - 30m&nbsp;black
 - 31m&nbsp;red
@@ -45,9 +49,19 @@ shell是解释执行的脚本语言，在shell中可以直接调用Linux系统�
 
 脚本执行：
 
-```chmod 755 hello.sh```
+1赋予执行权限，直接运行，更常用
+
+```>>>chmod 755 hello.sh```
+
+```>>>./hello.sh```#相对路径，或
+
+```>>>/root/hello.sh```#绝对路径
+
+2通过Bash调用执行脚本
+
 ```bash hello.sh```
-```./hello.sh``` or ```/root/hello.sh```
+
+
 
 ### 9-3 别名与快捷键
 
