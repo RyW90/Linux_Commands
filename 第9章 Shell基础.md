@@ -67,13 +67,15 @@ Shell两种主要语法，Bourne：sh,ksh,Bash(绝大多数使用),psh, zsh. C(�
 
 ```alias ```#查看系统中的别名
 
-```alias 别名：'原命令'```
+```alias 别名='原命令'```e.g. ```alias ls='ls --color=auto'```
 
-重启后将实效
+使用命令行，重启后将失效
 
 ```vi ~/.bashrc``` #写入环境变量配置文件，永久生效(reboot)
 
 也可以调用```source .bashrc```直接生效
+
+```unalias 别名```#删除此别名，临时删除，永久删除需要
 
 命令生效顺序：
 
@@ -92,7 +94,7 @@ Shell两种主要语法，Bourne：sh,ksh,Bash(绝大多数使用),psh, zsh. C(�
 - ctrl+A &nbsp;光标移动至行首
 - ctrl+E &nbsp;光标移动至行尾
 - ctrl+Z &nbsp;命令放入后台
-- ctrl+V &nbsp;历史命令中搜索
+- ctrl+R &nbsp;历史命令中搜索
 
 ### 9-4 历史命令
 
